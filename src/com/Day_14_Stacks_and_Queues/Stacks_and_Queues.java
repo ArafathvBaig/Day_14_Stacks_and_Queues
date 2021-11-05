@@ -64,6 +64,19 @@ public class Stacks_and_Queues
 		System.out.println(value + " added to the queue");
 	}
    
+	public int dequeue() 
+	{
+		int data = tail.value;
+		tail = tail.next;
+		if (currentSize==0) 
+		{
+			head = null;
+		}
+		currentSize--;
+		System.out.println(data + " removed from the queue");
+		return data;
+	}
+   
    public static void printList(Node head) 
    {
        Node temp = head;
@@ -89,6 +102,7 @@ public class Stacks_and_Queues
        saq.enqueue(56);
        saq.enqueue(30);
        saq.enqueue(70);
+       saq.dequeue();
    }
 }
 
